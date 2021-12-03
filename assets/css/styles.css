@@ -1,3 +1,74 @@
+:root {
+    --black: rgba(0,0,0,0.87);
+    --light-gray: rgb(242, 242, 242);
+    --gray: #5f6368;
+    --dark-gray: #505050;
+    --white: #fff;
+    --medium-gray: #aaa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: arial,sans-serif;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header-nav-link {
+    margin: 0 .8rem 0 .7rem;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.3rem;
+    line-height: 1rem;
+}
+
+.header-nav-link:hover {
+    text-decoration: underline;
+}
+
+.header-nav-link + div{
+    margin-left: 1.1rem;
+}
+
+.header-nav-drop-down {
+    width: 4rem;
+    height: 4rem;    
+    border: none;
+    border-radius: 50%;
+    margin: 0 .4rem;    
+    display: grid;
+    place-items: center;   
+}
+
+.header-nav-drop-down:hover {
+    background-color: var(--light-gray);
+}
+
+.dots {
+    width: 2.4rem;  
+    opacity: .6;  
+}
+
+.avatar {
+    width: 3.2rem;
+    height: 3.2rem;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
 .tooltip {
     position: relative;
 }
@@ -5,17 +76,45 @@
 .tooltip::before {
     display: none;
     content: attr(data-info);
-    color: white;
-    font-size: 0.8em;
-    padding: 2px 8px;
-    background: rgba(0,0,0,0.8);
+    background: var(--dark-gray);
+    color: var(--white);
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    padding: .5rem 1rem;    
     border-radius: 5px;
     position: absolute;
-    top: 1.5em;
-    left: 5px;
+    bottom: -28px;
     z-index: 999;
 }
 
-.tooltip:hover::before {
+.tooltip:hover::before, .tooltip:hover::after {
     display: block;
+}
+
+.tip1::before {
+    width: 8rem;
+    left: -3rem;
+}
+
+.tip2::before {
+    left: -15.5rem;
+    bottom: -25px;
+    background-color: transparent;
+}
+
+.tip2::after {
+    display: none;
+    background: var(--dark-gray);
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    padding: .5rem 1rem;    
+    border-radius: 5px;
+    position: absolute;
+    z-index: 800;
+    width: 18rem;
+    left: -15.5rem;
+    bottom: -55px;
+    content: "\A Edwin Torres \A edwintorres.mec@gmail.com";
+    white-space: pre;
+    color: var(--medium-gray);
 }
