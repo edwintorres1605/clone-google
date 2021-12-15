@@ -1,22 +1,38 @@
 :root {
     --black: rgba(0,0,0,0.87);
-    --light-gray: rgb(242, 242, 242);
-    --gray: #5f6368;
+    --dark: #3c4043;
     --dark-gray: #505050;
-    --white: #fff;
+    --gray: #5f6368;
+    --light-dark: #9aa0a6;
     --medium-gray: #aaa;
+    --light: #dfe1e5;
+    --light-gray: rgb(242, 242, 242);
+    --ultra-light: #f8f9fa;
+    --white: #fff;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: none;
+    outline: none;
 }
 
 html {
     font-size: 62.5%;
     font-family: arial,sans-serif;
+    
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100vh;   
+}
+
+/* HEADER */
 
 .header-nav {
     display: flex;
@@ -116,5 +132,164 @@ html {
     bottom: -55px;
     content: "\A Edwin Torres \A edwintorres.mec@gmail.com";
     white-space: pre;
-    color: var(--medium-gray);
+    color: var(--light-gray);
+}
+
+
+/* MAIN */
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.container img {
+    width: 275px;
+}
+
+.form {
+    display: grid;
+    place-items: center;
+    padding: 3rem 0;
+}
+
+.label-search {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.input-search {
+    width: 584px;
+    height: 46px;
+    border: .5px solid var(--light);
+    border-radius: 5rem;
+    padding: 2rem 10rem 2rem 5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+}
+
+.input-search:hover, .icon-microphone:hover + .input-search  {
+    border: none;
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+}
+
+.icon-search {
+    width: 2.1rem;
+    color: var(--light-dark);
+    fill: currentColor;
+    position: absolute;
+    top: 1.4rem;
+    left: 1.6rem;
+}
+
+.icon-microphone {
+    width: 2.4rem;
+    position: absolute;
+    top: 1rem;
+    right: 1.6rem;
+    cursor: pointer;
+}
+
+.tooltip3::before {
+    display: none;
+    position: absolute;
+    content: attr(data-info);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    padding: 1.5rem 1rem .8rem;  
+    clip-path: inset(5% 20% 15% 10%);
+    clip-path: polygon(0% 22.5%, 46% 22.5%, 50% 6%, 54% 22.5%, 100% 22.5%, 100% 100%, 0% 100%);              
+    bottom: -45px;
+    z-index: 999;    
+}
+
+.tooltip3:hover::before, .tooltip3:hover::after {
+    display: block;
+    z-index: 1000;    
+}
+
+.tip3::before {
+    width: 10rem;
+    left: -4.85rem; 
+    box-shadow: 0 5px 6px rgb(32 33 36 / 28%);   
+}
+
+.button {
+    margin: 0 .4rem;
+    padding: .9rem 1.8rem;
+    border: 1px solid var(--ultra-light);
+    border-radius: .4rem;
+    background-color: var(--ultra-light);
+    font-size: 1.4rem;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.button:hover {
+    border: 1px solid var(--light);
+    box-shadow: 0 1px .5px rgb(32 33 36 / 25%);
+}
+
+.lang {
+    font-size: 1.3rem;
+    color: var(--dark);
+}
+
+.lang a {
+    text-decoration: none;
+    margin-left: .5rem;
+}
+
+.lang a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 664px) {
+    .input-search {
+        width: 90wh;
+    }
+}
+
+
+/* FOOTER */
+
+.footer, .footer-nav li, .footer-nav a {
+    background-color: var(--light-gray);
+    font-size: 1.5rem;
+    color: var(--gray);
+    text-decoration: none;
+    list-style: none;
+}
+
+.footer p {
+    padding: 1.5rem 3rem;
+}
+
+.footer .footer-nav {
+    padding: 1.4rem 3.4rem;
+}
+
+.footer-nav {
+    border: 1px solid var(--light);
+}
+
+.footer-nav, .footer-nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav ul {
+    gap: 3rem;    
+}
+
+.footer-nav a, .footer-nav-link {
+    font-size: 1.4rem;
+}
+
+.footer-nav-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
